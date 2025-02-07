@@ -56,6 +56,11 @@ app.set('io', io);
 // Initialize socket middleware
 require('./middleware/socket')(io);
 
+//for backend deployment check
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
+
 const serverInstance = server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
